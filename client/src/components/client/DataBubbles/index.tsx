@@ -10,9 +10,15 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-function DataBubble({ label, value, icon }: DataBubbleProps) {
+function DataBubble({ label, value, icon, backgroundColor }: DataBubbleProps) {
   return (
-    <Flex backgroundColor="red.200" width={200} margin="10px">
+    <Flex
+      backgroundColor={backgroundColor}
+      width="250px"
+      margin="10px"
+      padding="10px"
+      borderRadius="10px"
+    >
       <Stat>
         <StatLabel>{label}</StatLabel>
         <StatNumber>$ {value}</StatNumber>
@@ -26,6 +32,7 @@ interface DataBubbleProps {
   label: string;
   value: number;
   icon: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  backgroundColor: any;
 }
 
 export function Balance({ displayValue }: BalanceProps) {
@@ -33,7 +40,8 @@ export function Balance({ displayValue }: BalanceProps) {
     <DataBubble
       label="Balance"
       value={displayValue}
-      icon={<Image src="/expense.png" alt="balance" />}
+      icon={<Image src="/balance.png" alt="balance" />}
+      backgroundColor="blue.100"
     />
   );
 }
@@ -48,6 +56,7 @@ export function Expense({ displayValue }: ExpenseProps) {
       label="Expense"
       value={displayValue}
       icon={<Image src="/expense.png" alt="balance" />}
+      backgroundColor="red.100"
     />
   );
 }
@@ -62,6 +71,7 @@ export function Income({ displayValue }: IncomeProps) {
       label="Income"
       value={displayValue}
       icon={<Image src="/income.png" alt="income" />}
+      backgroundColor="purple.100"
     />
   );
 }

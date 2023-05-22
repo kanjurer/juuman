@@ -13,7 +13,7 @@ import {
 export default function Entries({ entriesData }: EntriesProps) {
   return (
     <TableContainer>
-      <Table size="sm">
+      <Table size="md" height="100px">
         <Thead>
           <Tr>
             <Th>Category</Th>
