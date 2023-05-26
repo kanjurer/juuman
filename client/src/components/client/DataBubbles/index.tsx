@@ -1,5 +1,6 @@
 'use client';
 
+import { ExpenseEntry, IncomeEntry } from '@/interfaces';
 import {
   Container,
   Stat,
@@ -35,11 +36,20 @@ interface DataBubbleProps {
   backgroundColor: any;
 }
 
-export function Balance({ displayValue }: BalanceProps) {
+export function Balance({ expenses, incomes }: BalanceProps) {
+  const totalExpenses = expenses.reduce(
+    (sum, expense) => sum + expense.amount.value,
+    0
+  );
+  const totalIncomes = incomes.reduce(
+    (sum, income) => sum + income.amount.value,
+    0
+  );
+  const totalBalance = totalIncomes - totalExpenses;
   return (
     <DataBubble
       label="Balance"
-      value={displayValue}
+      value={totalBalance}
       icon={<Image src="/balance.png" alt="balance" />}
       backgroundColor="blue.100"
     />
@@ -47,14 +57,19 @@ export function Balance({ displayValue }: BalanceProps) {
 }
 
 interface BalanceProps {
-  displayValue: number;
+  expenses: ExpenseEntry[];
+  incomes: IncomeEntry[];
 }
 
-export function Expense({ displayValue }: ExpenseProps) {
+export function Expense({ expenses }: ExpenseProps) {
+  const totalExpenses = expenses.reduce(
+    (sum, expense) => sum + expense.amount.value,
+    0
+  );
   return (
     <DataBubble
       label="Expense"
-      value={displayValue}
+      value={totalExpenses}
       icon={<Image src="/expense.png" alt="balance" />}
       backgroundColor="red.100"
     />
@@ -62,14 +77,19 @@ export function Expense({ displayValue }: ExpenseProps) {
 }
 
 interface ExpenseProps {
-  displayValue: number;
+  expenses: ExpenseEntry[];
 }
 
-export function Income({ displayValue }: IncomeProps) {
+export function Income({ incomes }: IncomeProps) {
+  const totalIncomes = incomes.reduce(
+    (sum, income) => sum + income.amount.value,
+    0
+  );
+
   return (
     <DataBubble
       label="Income"
-      value={displayValue}
+      value={totalIncomes}
       icon={<Image src="/income.png" alt="income" />}
       backgroundColor="purple.100"
     />
@@ -77,5 +97,5 @@ export function Income({ displayValue }: IncomeProps) {
 }
 
 interface IncomeProps {
-  displayValue: number;
+  incomes: IncomeEntry[];
 }

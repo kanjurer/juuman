@@ -23,13 +23,17 @@ export default function Entries({ entriesData }: EntriesProps) {
           </Tr>
         </Thead>
         <Tbody>
-          {entriesData.map(({ id, name, category, amount }) => (
-            <Tr key={id}>
-              <Td>{category.name}</Td>
-              <Td>{name}</Td>
-              <Td isNumeric>{amount}</Td>
-            </Tr>
-          ))}
+          {entriesData.map(
+            ({ id, name, category, amount: { currency, value } }) => (
+              <Tr key={id}>
+                <Td>{category.name}</Td>
+                <Td>{name}</Td>
+                <Td isNumeric>
+                  {currency} {value}
+                </Td>
+              </Tr>
+            )
+          )}
         </Tbody>
         {/* <Tfoot>
           <Tr>

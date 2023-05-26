@@ -32,31 +32,46 @@ export const EXPENSES: ExpenseEntry[] = [
   {
     category: EXPENSECATEGORIES[0],
     name: 'Truly Tasty',
-    amount: 23,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '100',
   },
   {
     category: EXPENSECATEGORIES[1],
     name: 'Avatar 2',
-    amount: 12,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '200',
   },
   {
     category: EXPENSECATEGORIES[2],
     name: 'FIDO',
-    amount: 104,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '300',
   },
   {
     category: EXPENSECATEGORIES[3],
     name: 'Pool',
-    amount: 6,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '400',
   },
   {
     category: EXPENSECATEGORIES[4],
     name: 'Esso',
-    amount: 68,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '500',
   },
 ];
@@ -88,31 +103,46 @@ export const INCOMES: IncomeEntry[] = [
   {
     category: INCOMECATEGORIES[0],
     name: 'Dal Safe',
-    amount: 230,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '100',
   },
   {
     category: INCOMECATEGORIES[1],
     name: 'Dal Safe',
-    amount: 120,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '200',
   },
   {
     category: INCOMECATEGORIES[2],
     name: 'Software Dev',
-    amount: 1040,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '300',
   },
   {
     category: INCOMECATEGORIES[3],
     name: 'Software Dev',
-    amount: 1200,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '400',
   },
   {
     category: INCOMECATEGORIES[4],
     name: 'Learning Center',
-    amount: 680,
+    amount: {
+      value: 23,
+      currency: '$',
+    },
     id: '500',
   },
 ];

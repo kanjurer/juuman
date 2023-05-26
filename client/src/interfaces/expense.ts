@@ -1,11 +1,4 @@
-export interface ExpenseCategory {
-  id: string;
-  name: string;
-}
+import { DataCategory, DataEntry } from './base';
 
-export interface ExpenseEntry {
-  id: string;
-  name: string;
-  category: ExpenseCategory;
-  amount: number;
-}
+export interface ExpenseCategory extends DataCategory {}
+export interface ExpenseEntry extends DataEntry<ExpenseCategory> {}
