@@ -5,12 +5,17 @@ import { Expense } from '@/components/client/DataBubbles';
 import { Container, Flex } from '@chakra-ui/react';
 
 import { EXPENSES } from '@/data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ExpenseEntry } from '@/interfaces';
 import { AddExpenseButton } from '@/components/client/AddEntryButton';
+import { fetchExpenseEntry } from '@/api';
 
 export default function ExpensesPage() {
   const [expenses, setExpenses] = useState<ExpenseEntry[]>(EXPENSES);
+
+  useEffect(() => {
+    fetchExpenseEntry().then((data) => setExpenses(data));
+  }, []);
 
   return (
     <Flex flexDirection={{ sm: 'column', md: 'column', lg: 'row', xl: 'row' }}>

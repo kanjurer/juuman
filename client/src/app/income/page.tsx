@@ -5,12 +5,17 @@ import { Income } from '@/components/client/DataBubbles';
 import { Container, Flex } from '@chakra-ui/react';
 
 import { INCOMES } from '@/data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IncomeEntry } from '@/interfaces';
 import { AddIncomeButton } from '@/components/client/AddEntryButton';
+import { fetchIncomeEntry } from '@/api';
 
 export default function IncomePage() {
   const [incomes, setIncomes] = useState<IncomeEntry[]>(INCOMES);
+
+  useEffect(() => {
+    fetchIncomeEntry().then((data) => setIncomes(data));
+  }, []);
 
   return (
     <Flex flexDirection={{ sm: 'column', md: 'column', lg: 'row', xl: 'row' }}>
