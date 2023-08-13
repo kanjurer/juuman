@@ -24,13 +24,14 @@ export default function Entries({ entriesData }: EntriesProps) {
         </Thead>
         <Tbody>
           {entriesData.map(
-            ({ id, name, category, amount: { currency, value } }) => (
+            ({ id, name, category, amount: { currency, value }, date }) => (
               <Tr key={id}>
                 <Td>{category.name}</Td>
                 <Td>{name}</Td>
                 <Td isNumeric>
                   {currency} {value}
                 </Td>
+                <Td>{date}</Td>
               </Tr>
             )
           )}

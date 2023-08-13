@@ -10,4 +10,5 @@ export interface DataEntry<T extends DataCategory> {
   name: string;
   category: T;
   amount: Amount;
+  date: string;
 }
