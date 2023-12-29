@@ -37,6 +37,7 @@ export const EXPENSES: ExpenseEntry[] = [
       currency: '$',
     },
     id: '100',
+    date: '2023-12-12',
   },
   {
     category: EXPENSECATEGORIES[1],
@@ -46,6 +47,7 @@ export const EXPENSES: ExpenseEntry[] = [
       currency: '$',
     },
     id: '200',
+    date: '2023-12-12',
   },
   {
     category: EXPENSECATEGORIES[2],
@@ -55,6 +57,7 @@ export const EXPENSES: ExpenseEntry[] = [
       currency: '$',
     },
     id: '300',
+    date: '2023-12-12',
   },
   {
     category: EXPENSECATEGORIES[3],
@@ -64,6 +67,7 @@ export const EXPENSES: ExpenseEntry[] = [
       currency: '$',
     },
     id: '400',
+    date: '2023-12-12',
   },
   {
     category: EXPENSECATEGORIES[4],
@@ -73,6 +77,7 @@ export const EXPENSES: ExpenseEntry[] = [
       currency: '$',
     },
     id: '500',
+    date: '2023-12-12',
   },
 ];
 
@@ -108,6 +113,7 @@ export const INCOMES: IncomeEntry[] = [
       currency: '$',
     },
     id: '100',
+    date: '2023-12-12',
   },
   {
     category: INCOMECATEGORIES[1],
@@ -117,6 +123,7 @@ export const INCOMES: IncomeEntry[] = [
       currency: '$',
     },
     id: '200',
+    date: '2023-12-12',
   },
   {
     category: INCOMECATEGORIES[2],
@@ -126,6 +133,7 @@ export const INCOMES: IncomeEntry[] = [
       currency: '$',
     },
     id: '300',
+    date: '2023-12-12',
   },
   {
     category: INCOMECATEGORIES[3],
@@ -135,6 +143,7 @@ export const INCOMES: IncomeEntry[] = [
       currency: '$',
     },
     id: '400',
+    date: '2023-12-12',
   },
   {
     category: INCOMECATEGORIES[4],
@@ -144,5 +153,6 @@ export const INCOMES: IncomeEntry[] = [
       currency: '$',
     },
     id: '500',
+    date: '2023-12-12',
   },
 ];

@@ -14,7 +14,7 @@ def expense_category(request):
         serializer = ExpenseCategorySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({"expense_category": serializer.data},
+        return Response(serializer.data,
                         headers={'Access-Control-Allow-Origin': 'http://localhost:3000'})
 
 
@@ -28,7 +28,8 @@ def income_category(request):
         serializer = IncomeCategorySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({"income_category": serializer.data})
+        return Response(serializer.data,
+                        headers={'Access-Control-Allow-Origin': 'http://localhost:3000'})
 
 
 # entry
@@ -42,7 +43,7 @@ def expense_entry(request):
         serializer = ExpenseEntrySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({
+        return Response(serializer.data, headers={
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': 'http://localhost:3000',
         })
@@ -58,7 +59,7 @@ def income_entry(request):
         serializer = IncomeEntrySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response({"income_entry": serializer.data}, headers={
+        return Response(serializer.data, headers={
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': 'http://localhost:3000',
         })

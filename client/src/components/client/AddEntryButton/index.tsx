@@ -18,6 +18,7 @@ import { AddIcon } from '@chakra-ui/icons';
 
 import { EXPENSECATEGORIES, INCOMECATEGORIES } from '@/data';
 import { ExpenseEntry, IncomeEntry } from '@/interfaces';
+import { postExpenseEntry, postIncomeEntry } from '@/api';
 
 export default function AddEntryButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -67,20 +68,21 @@ export function AddExpenseButton({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleAddButton = () => {
+  const handleAddButton = async () => {
     onClose();
-    setExpense((e) => [
-      {
-        id: '123',
-        name: 'Papaya',
-        category: { name: 'Food', id: '123' },
-        amount: {
-          value: 100,
-          currency: '$',
-        },
+    const expense = {
+      id: '123',
+      name: 'Papaya',
+      category: { name: 'Food', id: '123' },
+      amount: {
+        value: 100,
+        currency: '$',
       },
-      ...e,
-    ]);
+      date: '2022-12-12',
+    };
+
+    const data = await postExpenseEntry(expense);
+    setExpense((e) => [data, ...e]);
   };
 
   return (
@@ -129,20 +131,21 @@ export function AddIncomeButton({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleAddButton = () => {
+  const handleAddButton = async () => {
     onClose();
-    setIncome((e) => [
-      {
-        id: '123',
-        name: 'Papaya',
-        category: { name: 'Food', id: '123' },
-        amount: {
-          value: 100,
-          currency: '$',
-        },
+    const income = {
+      id: '1212',
+      name: 'Papaya',
+      category: { name: 'Food', id: '123' },
+      amount: {
+        value: 100,
+        currency: '$',
       },
-      ...e,
-    ]);
+      date: '2022-12-12',
+    };
+
+    const data = await postIncomeEntry(income);
+    setIncome((e) => [data, ...e]);
   };
 
   return (
